@@ -2,7 +2,7 @@
 
 :root{
     --color-main: #4b33a8;
-    --color-main-ligh: #5b46bb;
+    --color-main-light: #5b46bb;
     --color-white: #ececec;
     --color-gray: #e2e2e2;
     --color-red: #961818;
@@ -36,6 +36,7 @@ a{
 
 aside{
     padding: 2rem;
+    padding-right: 0;
     color: var(--color-white);
     position: sticky;
     top: 0;
@@ -48,6 +49,50 @@ aside{
 .logo{
     font-weight: 400;
     font-size: 1.3rem;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.button-menu{
+    background-color: transparent;
+    border: 0;
+    color: var(--color-white);
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    font-weight: 600;
+    padding: 1rem;
+    font-size: .85rem;
+}
+
+.button-menu.active{
+    background-color: var(--color-white);
+    color: var(--color-main);
+    width: 100%;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    position: relative;
+}
+
+.button-menu.active::before{
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    bottom: 100%;
+    right: 0;
+    background-color: red;
+    border-bottom-right-radius: 1rem;
+    box-shadow: 0 1rem 0 var(--color-white);
+}
+
+.button-menu > i.bi-hand-index-thumb-fill,
+.button-menu > i.bi-hand-index-thumb {
+    transform: rotateZ(90deg);
 }
 
 .text-footer{
@@ -63,3 +108,46 @@ main{
     padding: 2rem;
 }
 
+.main-title{
+    color: var(--color-main);
+}
+
+.main-products{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.img-product{
+    max-width: 100%;
+    border-radius: 1rem;
+}
+
+.details-product{
+    background-color: var(--color-main);
+    color: var(--color-white);
+    padding: .5rem;
+    border-radius: 1rem;
+    margin-top: -2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.add-product{
+    border: 0;
+    background-color: var(--color-white);
+    color: var(--color-main);
+    padding: .4rem;
+    text-transform: uppercase;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid var(--color-white);
+    transition: background-color .2s, color .2s;
+}
+
+.add-product:hover{
+    background-color: var(--color-main);
+    color: var(--color-white);
+}
